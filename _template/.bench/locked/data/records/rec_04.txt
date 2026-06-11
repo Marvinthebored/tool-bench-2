@@ -1,0 +1,4 @@
+id: REC-004
+category: B
+value: 510
+state: active

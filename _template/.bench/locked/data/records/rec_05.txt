@@ -1,0 +1,4 @@
+id: REC-005
+category: A
+value: 73
+state: pending

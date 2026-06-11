@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")"
+
+case "${1:-}" in
+  checkpoint) python3 .bench/checkpoint.py "${2:-}" ;;
+  finish)     python3 .bench/finish.py ;;
+  extra)      python3 .bench/extra.py ;;
+  status)     python3 .bench/status.py ;;
+  start)      echo "Already in a run directory. Use the parent benchctl to start new runs." >&2; exit 2 ;;
+  *)          echo "usage: ./benchctl checkpoint <N> | finish | extra | status" >&2; exit 2 ;;
+esac

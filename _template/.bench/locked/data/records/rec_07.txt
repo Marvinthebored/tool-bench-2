@@ -1,0 +1,4 @@
+id: REC-007
+category: A
+value: 445
+state: active

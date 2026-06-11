@@ -1,0 +1,4 @@
+id: REC-020
+category: B
+value: 143
+state: active

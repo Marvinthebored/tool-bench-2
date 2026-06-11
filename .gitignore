@@ -1,0 +1,13 @@
+# Run directories created by ./benchctl start (named <agent>-<model>-<stamp>/)
+*-2*/
+# Top-level generated leaderboard + per-run results
+RESULTS.md
+RESULTS*.md
+RESULTS*.bak*
+RESULTS_*.md
+# Generated run state inside template (kept empty in repo)
+_template/.bench/state/*.json
+# OS / Python junk
+.DS_Store
+__pycache__/
+*.pyc

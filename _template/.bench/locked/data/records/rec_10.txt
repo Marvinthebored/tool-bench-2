@@ -1,0 +1,4 @@
+id: REC-010
+category: A
+value: 198
+state: active

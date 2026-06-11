@@ -1,0 +1,4 @@
+id: REC-002
+category: A
+value: 182
+state: active
