@@ -6,34 +6,18 @@ score 6/6. Failures indicate harness or configuration issues.
 
 ## Quick start
 
-### 1. Start a run
+### 1. Run the benchmark
 
-From this directory:
-```bash
-./benchctl start <name>
-```
-Naming convention: `<agent>-<model>`, e.g. `ocmarvin-gpt55`, `claudesub-sonnet46`.
+Open `PROMPT.md`, substitute the real path to this directory, and copy/paste the
+one-liner to the candidate agent. That's it.
 
-This creates a timestamped run directory (e.g. `ocmarvin-gpt55-20260525-0830/`),
-copies the task and data into it, and starts the clock. The command prints the path.
+The agent reads `TASK.md`, runs `./benchctl start <name>` itself to create its own
+timestamped run directory, and executes all six stages inside it. No setup on your
+part beyond fixing the path in the prompt.
 
-### 2. Point the agent at the run directory
+### 2. Assess
 
-The agent's first instruction should be:
-
-> Read `TASK.md` in `<run-dir>` and execute all stages. Do all work inside that directory.
-
-For a Claude Code subagent:
-```
-Agent({
-  description: "<model> TB2 run",
-  model: "<model>",
-  prompt: "Read <run-dir>/TASK.md and execute all stages. Work only inside <run-dir>/."
-})
-```
-
-### 3. Assess
-
+Once the agent has finished, score its run:
 ```bash
 ./benchctl assess <run-dir>
 ```
